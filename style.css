@@ -1,0 +1,96 @@
+section {
+  float: right;
+  margin: 0 1.5%;
+  width: 65%;
+  padding-left:3%;
+}
+#trang {
+float:left;
+width: 100%;
+
+}
+aside {
+  float: left;
+  margin: 0 1.5%;
+  width: 25%;
+}
+.body
+{
+width:840px;
+margin:0 auto;
+
+}
+body{
+background-color: #f2f2f2;	
+}
+h1,h2,h3,h4,h5{
+	text-transform:uppercase;
+}
+footer
+{text-align: center;
+clear:both;
+padding-top:80px;}
+header{
+	margin-bottom:20px;
+}
+header h1
+{
+    margin: auto;
+    width: 50%;
+    text-align: center;padding:25px;
+margin-top:20px;
+
+}
+.crop {
+ height: 140px;
+ width: 140px;
+ overflow: hidden;
+}
+.crop img {
+ height: auto;
+ width: 140px;
+}
+.crop2 {
+ height: 140px;
+ width: 140px;
+ overflow: hidden;
+}
+.crop3 {
+ height: 200px;
+ width: 200px;
+ overflow: hidden;
+}
+.crop2 img {
+ height: auto;
+ width: 140px;
+}
+.crop3 img {
+ height: auto;
+ width: 200px;
+}
+header{
+
+margin-bottom:30px;}
+a{
+text-decoration:none;
+}
+label{
+float:left;
+width:80px;}
+
+input,select,textarea{
+
+margin-bottom:15px;
+}
+#nguoidung label{
+float:none;}
+.sanpham{
+float:left;
+margin-right:25px;
+}
+#admin{
+padding-top:20px;
+}
+section h2{
+text-transform: uppercase;
+}
