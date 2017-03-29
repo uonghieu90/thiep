@@ -183,9 +183,9 @@ $table.="</table>";
 if (isset($_SESSION['laadmin'])){
 	if ($_SESSION['laadmin']==0){
 $table.="<form action=index.php>";
-$table.="<input type=hidden name=action value=tratien>";
+$table.="<input type=hidden name=action value=diachi>";
 $table.="<input type=hidden name=rohangid value=$rohangid>";
-$table.="<input type=submit value='Tra tien'></form>";}}
+$table.="<input type=submit value='Thanh toan'></form>";}}
 $table.="<form action=index.php>";
 $table.="<input type=hidden name=action value=xoarohang>";
 $table.="<input type=hidden name=rohangid value=$rohangid>";

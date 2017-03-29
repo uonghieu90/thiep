@@ -164,3 +164,46 @@ $s->closeCursor();
 return $product;
 	
 }
+
+function sua_hrh2($rohangid,$diachi,$dt)
+{
+global $db;
+$q="UPDATE rohang SET diachi=:diachi,dt=:dt WHERE 
+rohangid=:rohangid";
+$s=$db->prepare($q)	;
+$s->bindValue(":rohangid",$rohangid);
+$s->bindValue(":diachi",$diachi);
+$s->bindValue(":dt",$dt);
+$s->execute();
+$product=$s->fetch();
+$s->closeCursor();
+return $product;
+	
+}
+
+function lay_rh($rohangid)
+{
+global $db;
+$q="SELECT diachi,dt FROM rohang WHERE 
+rohangid=:rohangid";
+$s=$db->prepare($q)	;
+$s->bindValue(":rohangid",$rohangid);
+$s->execute();
+$product=$s->fetch();
+$s->closeCursor();
+return $product;	
+}
+function insert_dhdc($rohangid,$donhangid){
+	$rohang=lay_rh($rohangid);
+	global $db;
+$q="UPDATE donhang SET diachi=:diachi,dt=:dt WHERE 
+donhangid=:donhangid";
+$s=$db->prepare($q)	;
+$s->bindValue(":donhangid",$donhangid);
+$s->bindValue(":diachi",$rohang['diachi']);
+$s->bindValue(":dt",$rohang['dt']);
+$s->execute();
+$product=$s->fetch();
+$s->closeCursor();
+return $product;
+}

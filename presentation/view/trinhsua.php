@@ -25,7 +25,7 @@ $bo2=false;
 <?php }?>
 <?php if($bo2==true){?>
 <input type="hidden" name="action" value="suadiachi">
-<label>Địa chỉ </label> <textarea class="form-control" rows="5" name="diachi" value="<?php echo $nguoi['diachi'];?>"></textarea>
+<label>Địa chỉ </label> <textarea class="form-control" rows="5" name="diachi" value="<?php echo $nguoi['diachi'];?>"><?php echo $nguoi['diachi'];?></textarea>
 <label>Điện thoại </label><input type=text name="dt"value="<?php echo $nguoi['dt'];?>" ><br>
 <?php }?>
 <input type=submit value=suanguoi class="btn btn-primary">

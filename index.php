@@ -33,7 +33,7 @@ if($action==NULL)
 elseif ($action=="xemsp"||$action=="nhanxet"){
 include("presentation/sanpham.php");
 }
-elseif ($action=="xoamh"||$action=="chonmh"||$action=="mua"||$action=="xoarohang"||$action=="tratien"){
+elseif ($action=="xoamh"||$action=="chonmh"||$action=="mua"||$action=="xoarohang"||$action=="tratien"||$action=="diachi"||$action=="khangdinh"){
 	include("presentation/rohang.php");
 }
 elseif ($action=="login"||$action=="logout") include("presentation/dangnhap.php");

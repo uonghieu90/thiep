@@ -7,7 +7,8 @@
 				 $ten1=filter_input(INPUT_GET,"ten");
                   
                  $id=filter_input(INPUT_GET,"id");
-                 $value=$_COOKIE['user'];
+                if(isset($_COOKIE['user']))
+				 $value=$_COOKIE['user'];
                  if(!isset($_COOKIE['user'])) {
 					 $value=uniqid();
 					 setcookie('user', $value, time() + (86400 * 30), "/");
@@ -66,8 +67,29 @@
                   header("Location:index.php?action=mua");
                   break;
 				  case "diachi":
-				  $nguoi=$_SESSION['id'];
+				  $id=$_SESSION['id'];
+				  if($id!=null){
+				  $nguoi=get_nguoi($id);
+				  }
 				  
+			   $rohangid=filter_input(INPUT_GET,"rohangid");
+	             $trang['ten']="Xác nhận địa chỉ";
+                  $them="1_diachi.php"	 ;
+	              $trang["noidung"]="";
+                 	include "view/trangmau.php";
+				  break;
+				  case "khangdinh":
+				  $rohangid=filter_input(INPUT_GET,"rohangid");
+				  $diachi=filter_input(INPUT_GET,"diachi");
+				  $dt=filter_input(INPUT_GET,"dt");
+				  sua_hrh2($rohangid,$diachi,$dt);
+				  $trang['ten']="Xác nhận mua hàng";
+				  $them="2_xemlairo.php"	 ;
+				  $mangs=show_hrh($rohangid);
+                 
+	              $trang["noidung"]="";
+                 	include "view/trangmau.php";
+					break;
 				   case "tratien":
                   $nguoi=$_SESSION['id'];
 				 $rohangid=filter_input(INPUT_GET,"rohangid");
@@ -79,7 +101,7 @@
 				 $tong=$tong/22.6;
 				 $tong=number_format($tong, 2, '.', '');
 				 $donhangid=tao_donhang($nguoi);
-				 
+				 insert_dhdc($rohangid,$donhangid);
 				 foreach($mua AS $hang){
 					 create_donhang($donhangid,$hang['gia'],$hang['ten'],$hang['thiepid'],$hang['soluong']);
 				 }
