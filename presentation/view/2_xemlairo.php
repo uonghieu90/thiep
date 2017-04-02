@@ -22,6 +22,7 @@ $table.="</table>";
 if (isset($_SESSION['laadmin'])){
 	if ($_SESSION['laadmin']==0){
 $table.="<form action=index.php>";
+$table.="<select name=thanhtoan><option value=1>thanh toán tiền mặt</option><option value=2>thanh toán paypal</option></select><br>";
 $table.="<input type=hidden name=action value=tratien>";
 $table.="<input type=hidden name=rohangid value=$rohangid>";
 $table.="<input type=submit value='Tra tien'></form>";}}

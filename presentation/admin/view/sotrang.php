@@ -37,9 +37,14 @@ $so1=filter_input(INPUT_GET,"so",FILTER_VALIDATE_INT);
  case "formnhaprohang":
    case "xemrohang":
 	$so=get_count_rohang();
-	$action="formnharohang";
+	$action="formnhaprohang";
 	$sotrang=ceil($so[0]/9);
 		break;
+	case "formnhaptrang":case "suatrang":
+	$so=get_count_trang();
+	$action="formnhaptrang";
+	$sotrang=ceil($so[0]/9);
+		break;	
 }
 
 $so=(int)$so1;

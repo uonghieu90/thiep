@@ -20,6 +20,9 @@
 <a href="index.php?action=xemtrang&trangid=3"> Liên hệ</a>
 </li>
 <li>
+<a href="index.php?action=gettrangs"> Thông tin</a>
+</li>
+<li>
 <a href="index.php?action=mua"> Rỏ hàng</a>
 </li>
 </ul>

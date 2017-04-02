@@ -38,8 +38,9 @@ elseif ($action=="xoamh"||$action=="chonmh"||$action=="mua"||$action=="xoarohang
 }
 elseif ($action=="login"||$action=="logout") include("presentation/dangnhap.php");
  elseif (($action=="dangky"||$action=="taonguoi")) include("presentation/dangky.php");
- elseif ($action=="xemtrang") include("presentation/trang.php");
+ elseif ($action=="xemtrang"||$action=="gettrangs") include("presentation/trang.php");
   elseif ($action=="tinhchat") include("presentation/tinhchat-control.php");
+   
  if(isset($_SESSION['laadmin']))
  {
 	  if($_SESSION['laadmin']==0)

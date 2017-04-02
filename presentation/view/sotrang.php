@@ -3,6 +3,7 @@ $x=false;
 $y=false;
 $z=false;
 $w=false;
+$u=false;
 $so=1;
 $so=filter_input(INPUT_GET,"so",FILTER_VALIDATE_INT);
 
@@ -31,8 +32,14 @@ case "xemdssp":
 		$so=get_count_gia($gia); 
 	$sotrang=ceil($so[0]/9);
 	break;
+	case "gettrangs":
+	$u=true;
+	//$gia=filter_input(INPUT_GET,"gia",FILTER_VALIDATE_INT);
+		$so= get_count_trang_show();
+	$sotrang=ceil($so[0]/9);
+	break;
 }
-if($x||$y||$z||$w){
+if($x||$y||$z||$w||$u){
 $so=(int)$so;
 if($so<$sotrang)
 $so=$so+1;}
@@ -67,6 +74,14 @@ endif;?>
 	<li><a href="?action=timgia&gia=<?php echo $gia;?>&so=<?php echo $i;?>"><?php echo $i;?></a></li>
 	  <?php }?>
 	  <li><a href="?action=timgia&gia=<?php echo $gia;?>&so=<?php echo $so;?>">&raquo;</a></li>
+<?php 	
+endif;?>
+</ul>
+<?php if($u)
+:for($i=1;$i<=$sotrang;$i++) {?>
+	<li><a href="?action=gettrangs&so=<?php echo $i;?>"><?php echo $i;?></a></li>
+	  <?php }?>
+	  <li><a href="?action=gettrangs&so=<?php echo $so;?>">&raquo;</a></li>
 <?php 	
 endif;?>
 </ul>

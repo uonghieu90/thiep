@@ -49,7 +49,10 @@ for($j=0;$j<4;$j++){
 	$tinh=$sao->getdong($i)?>
 <li>
 <a href="?action=tinhchat&<?php echo $sao->getten();?>=<?php echo $tinh['id'].$arr[1];?>">
-<?php echo $tinh['thap'];?>- <?php echo $tinh['cao'];?>
+<?php //echo $tinh['thap'];?> <?php //echo $tinh['cao'];?>
+<?php for($j=1;$j<=$i+1;$j++){ ?>
+<img src="image/star.jpg" height="12" width="12">
+ <?php }?>
 </a></li>
 
 <?php } ?></ul>

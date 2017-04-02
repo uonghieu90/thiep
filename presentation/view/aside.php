@@ -3,7 +3,7 @@ $cacloai=get_loai();
 $ban=get_ban();
 if(isset($banid))
 $cacloai=get_loai_ban($banid);
-	
+	$loaiid=filter_input(INPUT_GET,"loaiid");
 ?>
 <aside>
 <?php include "login.php";?>
@@ -28,7 +28,7 @@ $cacloai=get_loai_ban($banid);
 <nav>
 <ul class="nav nav-list">
 <?php foreach ($ban AS $ban1): ?>
-<li>
+<li <?php if(isset($banid)){if($ban1['banid']==$banid){?>style="background-color:#eee;"<?php }}?>>
 <a href="?action=ban&banid=<?php echo $ban1['banid'];?>">
 <?php echo $ban1["ten"]; echo " (".get_count_banthiep($ban1['banid'])[0].")";?>
 </a>
@@ -46,7 +46,7 @@ $cacloai=get_loai_ban($banid);
 <nav>
 <ul class="nav nav-list">
 <?php foreach ($cacloai AS $loai1): ?>
-<li>
+<li <?php if(isset($banid)){if($loai1['loaiid']==$loaiid){?>style="background-color:#eee;"<?php }}?>>
 <a href="?action=xemdssp&loaiid=<?php echo $loai1['loaiid'];?>">
 <?php echo $loai1["ten"];echo " (".get_count_loai($loai1['loaiid'])[0].")"; ?>
 </a>

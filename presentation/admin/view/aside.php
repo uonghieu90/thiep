@@ -28,7 +28,10 @@
 <a href="admin.php?action=formnhapdonhang ">Đơn hàng
 </a>
 </li>
-
+<li>
+<a href="admin.php?action=formnhaptrang ">Trang
+</a>
+</li>
 
 </ul>
 </div>

@@ -23,7 +23,7 @@
 				$recom=recommend_rohang($rohangid);
 				 $mua=show_hrh($rohangid);
                  $them=table4($mua);
-				 
+				 if($mua!=null)
 				 $them.="<h4>Khách hàng cũng mua sản phẩm sau</h4><div class=row>";
                foreach($recom AS $sp) {
               $them.="<div class='col-md-3 panel panel-default' style=height:130px;>";
@@ -73,7 +73,7 @@
 				  }
 				  
 			   $rohangid=filter_input(INPUT_GET,"rohangid");
-	             $trang['ten']="Xác nhận địa chỉ";
+	             $trang['ten']="Bước 1 :Xác nhận địa chỉ";
                   $them="1_diachi.php"	 ;
 	              $trang["noidung"]="";
                  	include "view/trangmau.php";
@@ -83,7 +83,7 @@
 				  $diachi=filter_input(INPUT_GET,"diachi");
 				  $dt=filter_input(INPUT_GET,"dt");
 				  sua_hrh2($rohangid,$diachi,$dt);
-				  $trang['ten']="Xác nhận mua hàng";
+				  $trang['ten']="Bước 2:Xác nhận mua hàng";
 				  $them="2_xemlairo.php"	 ;
 				  $mangs=show_hrh($rohangid);
                  
@@ -91,6 +91,7 @@
                  	include "view/trangmau.php";
 					break;
 				   case "tratien":
+				   $thanhtoan=filter_input(INPUT_GET,"thanhtoan");
                   $nguoi=$_SESSION['id'];
 				 $rohangid=filter_input(INPUT_GET,"rohangid");
 				 $mua=show_hrh($rohangid);
@@ -101,7 +102,7 @@
 				 $tong=$tong/22.6;
 				 $tong=number_format($tong, 2, '.', '');
 				 $donhangid=tao_donhang($nguoi);
-				 insert_dhdc($rohangid,$donhangid);
+				 insert_dhdc($rohangid,$donhangid,$thanhtoan);
 				 foreach($mua AS $hang){
 					 create_donhang($donhangid,$hang['gia'],$hang['ten'],$hang['thiepid'],$hang['soluong']);
 				 }
@@ -109,8 +110,10 @@
 				 
 				 $trang['ten']="Trả tiền";
 			   
-	  
+	              if($thanhtoan==2)
                   $them="paypal.php"	 ;
+			    elseif($thanhtoan==1)
+				$them="tienmat.php";
 	              $trang["noidung"]="";
                  	include "view/trangmau.php";
 				 

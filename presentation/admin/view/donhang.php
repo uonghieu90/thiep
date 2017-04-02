@@ -24,12 +24,16 @@ else
 ?>
 
 <table class="table table-bordered table-striped table-hover">
-<tr><th>Đơn hàng id</th><th>nguoiid</th><th>ngày tháng</th><th>trạng thái</th><th>xóa</th><th>sửa</th><th>xem</th></tr>
+<tr><th>Đơn hàng id</th><th>nguoiid</th><th>ngày tháng</th><th>Địa chỉ</th><th>hình thức trả tiên</th><th>trạng thái</th><th>xóa</th><th>sửa</th><th>xem</th></tr>
 <?php foreach($donhang AS $hang){?>
 <tr>
 <td><?php echo $hang['donhangid'];?></td>
 <td><?php  $nguoi=get_nguoi($hang['nguoiid']);echo $nguoi['ten']?></td>
 <td><?php echo $hang['ngaythang'];?></td>
+<td><?php echo $hang['diachi'];?></td>
+<td><?php if($hang['thanhtoan']==1)echo "tiền mặt";
+elseif($hang['thanhtoan']==2)echo "paypal"
+?></td>
 <td><form action="admin.php" id="<?php echo $hang['donhangid']?>">
 <input type="hidden" name="action" value="suadonhang">
 <input type="hidden" name="donhangid" value="<?php echo $hang['donhangid'];?>">

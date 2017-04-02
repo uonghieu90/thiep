@@ -193,13 +193,14 @@ $product=$s->fetch();
 $s->closeCursor();
 return $product;	
 }
-function insert_dhdc($rohangid,$donhangid){
+function insert_dhdc($rohangid,$donhangid,$thanhtoan=1){
 	$rohang=lay_rh($rohangid);
 	global $db;
-$q="UPDATE donhang SET diachi=:diachi,dt=:dt WHERE 
+$q="UPDATE donhang SET diachi=:diachi,dt=:dt,thanhtoan=:thanhtoan WHERE 
 donhangid=:donhangid";
 $s=$db->prepare($q)	;
 $s->bindValue(":donhangid",$donhangid);
+$s->bindValue(":thanhtoan",$thanhtoan);
 $s->bindValue(":diachi",$rohang['diachi']);
 $s->bindValue(":dt",$rohang['dt']);
 $s->execute();

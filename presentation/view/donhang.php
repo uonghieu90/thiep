@@ -18,12 +18,16 @@ if (isset($_SESSION['id']))
 ?>
 
 <table class="table table-bordered table-striped table-hover ">
-<tr><th>Đơn hàng id</th><th>nguoiid</th><th>ngày tháng</th><th>trạng thái</th></tr>
+<tr><th>Đơn hàng id</th><th>nguoiid</th><th>ngày tháng</th><th>Địa chỉ</th><th>hình thức trả tiên</th><th>trạng thái</th></tr>
 <?php foreach($donhang AS $hang){?>
 <tr>
 <td><?php echo $hang['donhangid'];?></td>
 <td><?php  $nguoi=get_nguoi($hang['nguoiid']);echo $nguoi['ten']?></td>
 <td><?php echo $hang['ngaythang'];?></td>
+<td><?php echo $hang['diachi'];?></td>
+<td><?php if($hang['thanhtoan']==1)echo "tiền mặt";
+elseif($hang['thanhtoan']==2)echo "paypal"
+?></td>
 <td><select name="trangthai">
 <option value=0 <?php if($hang['trangthai']==0)echo "selected";?>>chua tra</option>
 <option value=1 <?php if($hang['trangthai']==1)echo "selected";?>>da tra</option>
