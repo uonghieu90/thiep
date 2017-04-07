@@ -25,6 +25,9 @@
 <li>
 <a href="index.php?action=mua"> Giỏ hàng</a>
 </li>
+<li>
+<a href="index.php?action=getmongmuon">Yêu thích</a>
+</li>
 </ul>
 </div>
 </div>

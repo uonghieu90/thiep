@@ -68,7 +68,7 @@ $product=$db->lastInsertId();
 $s->closeCursor();
 return $product;	
 }
-function add_mm($mongmuonid,$gia,$ten,$thiepid,$soluong)
+function add_mm($mongmuonid,$thiepid,$gia,$ten)
 {
 global $db;
 $q="SELECT * FROM hang_mongmuon WHERE mongmuonid= :mongmuonid AND thiepid=:thiepid";
@@ -79,16 +79,16 @@ $s->execute();
 $product=$s->fetch();
 $s->closeCursor();	
 	if($product!=NULL){
-		$soluong+=$product["soluong"];
-		sua_mm($mongmuonid,$thiepid,$soluong);
+
 	}
 	else{
-		create_mm($mongmuonid,$gia,$ten,$thiepid,$soluong);
+		create_mm($mongmuonid,$gia,$ten,$thiepid);
 	}
 }
 function show_mm($mongmuonid)
 {
 global $db;
+$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 $q="SELECT * FROM hang_mongmuon WHERE mongmuonid= :mongmuonid ";
 $s=$db->prepare($q)	;
 $s->bindValue(":mongmuonid",$mongmuonid);
@@ -98,19 +98,19 @@ $s->closeCursor();
 return $product;
 }
 
-function create_mm($mongmuonid,$gia,$ten1,$thiepid,$soluong)
+function create_mm($mongmuonid,$gia,$ten1,$thiepid)
 {
 global $db;
-$q="INSERT INTO hang_mongmuon (mongmuonid,gia,ten,thiepid,soluong) VALUES 
-(:mongmuonid,:gia,:ten,:thiepid,:soluong)";
+$q="INSERT INTO hang_mongmuon (mongmuonid,gia,ten,thiepid) VALUES 
+(:mongmuonid,:gia,:ten,:thiepid)";
 $s=$db->prepare($q)	;
 $s->bindValue(":mongmuonid",$mongmuonid);
 $s->bindValue(":gia",$gia);
 $s->bindValue(":ten",$ten1);
 $s->bindValue(":thiepid",$thiepid);
-$s->bindValue(":soluong",$soluong);
 $s->execute();
 $product=$s->fetch();
+
 $s->closeCursor();
 return $product;
 	

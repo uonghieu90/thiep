@@ -28,7 +28,7 @@
 <div class="sanpham thumbnail" width="304" height="236" gia="<?php echo ($sanpham["giathanh"]-$sanpham["giamgia"]);  ?>" luotxem="<?php echo $sanpham['checked'];?>">
 
 <div class="crop2">
-<img src="image/<?php echo $sanpham['hinhanh'];?> " height="120" width="115"></div><br>
+<img src="image/<?php echo $sanpham['hinhanh'];?> " height="120" width="125"></div><br>
 <h5 class="text-center"><?php echo $sanpham["ten"]; ?></h5>
    <?php echo ($sanpham["giathanh"]-$sanpham["giamgia"])."000  "; $gia=($sanpham["giathanh"]-$sanpham["giamgia"]);  ?> VND<br>
  <div><?php for($i=1;$i<=5;$i++){ if ($i<=$sanpham['sao']){?>
@@ -36,7 +36,8 @@
  <?php }
  else { ?><img src="image/star2.png" height="7" width="7">
 <?php }} ?></div>
-<form action="index.php" id="nut"><input type=hidden name="gia" value="<?php echo $gia;?>"><input type=hidden name="ten" value="<?php echo $sanpham['ten'];?>"><input type=hidden name="action" value="mua"><input type=hidden name="id" value="<?php echo $sanpham['thiepid'];?>"> <input type="submit" class="btn btn-primary"  value="Mua"> <a href="?action=xemsp&thiepid=<?php echo $sanpham['thiepid'];?>" class="btn btn-info">Xem</a> </form>
+<form action="index.php" id="nut"><input type=hidden name="gia" value="<?php echo $gia;?>"><input type=hidden name="ten" value="<?php echo $sanpham['ten'];?>"><input type=hidden name="action" value="mua"><input type=hidden name="id" value="<?php echo $sanpham['thiepid'];?>"> <input type="submit" class="btn btn-primary"  value="Mua"> <a href="?action=xemsp&thiepid=<?php echo $sanpham['thiepid'];?>" class="btn btn-info">Xem</a> 
+<a href="?action=getmongmuon&gia=<?php echo $gia;?>&ten=<?php echo $sanpham['ten'];?>&id=<?php echo $sanpham['thiepid'];?>" class="btn btn-danger"><img src="icon/wish.png"height="15" width="15"></a></form>
 
 </div>
 <?php $i++;if ($i%3==0)echo "</div>";?>

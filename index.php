@@ -14,6 +14,7 @@ require("data/nguoi.php");
 require("data/nhanxet.php");
 require("data/tinhchat.php");
 require("data/lienhe.php");
+require("data/mongmuon_db.php");
 require("data/util.php");
 $action=filter_input(INPUT_POST,"action");
 $path=getcwd().DIRECTORY_SEPARATOR."image"; 
@@ -33,6 +34,9 @@ if($action==NULL)
  include("presentation/loai.php");
 elseif ($action=="xemsp"||$action=="nhanxet"){
 include("presentation/sanpham.php");
+}
+elseif ($action=="getmongmuon"||$action=="xoamongmuon"||$action=="xoamm"){
+include("presentation/mongmuon.php");
 }
 elseif ($action=="xoamh"||$action=="chonmh"||$action=="mua"||$action=="xoarohang"||$action=="tratien"||$action=="diachi"||$action=="khangdinh"){
 	include("presentation/rohang.php");

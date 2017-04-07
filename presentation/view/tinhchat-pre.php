@@ -63,7 +63,8 @@ if($kichco!=0) echo "<a href='?action=tinhchat".$arr[3]."'><div class='btn btn-i
  <?php }
  else { ?><img src="image/star2.png" height="7" width="7">
 <?php }} ?></div>
-<form action="index.php" id="nut"><input type=hidden name="gia" value="<?php echo $gia;?>"><input type=hidden name="ten" value="<?php echo $sanpham['ten'];?>"><input type=hidden name="action" value="mua"><input type=hidden name="id" value="<?php echo $sanpham['thiepid'];?>"> <input type="submit" class="btn btn-primary"  value="Mua"> <a href="?action=xemsp&thiepid=<?php echo $sanpham['thiepid'];?>" class="btn btn-info">Xem</a> </form>
+<form action="index.php" id="nut"><input type=hidden name="gia" value="<?php echo $gia;?>"><input type=hidden name="ten" value="<?php echo $sanpham['ten'];?>"><input type=hidden name="action" value="mua"><input type=hidden name="id" value="<?php echo $sanpham['thiepid'];?>"> <input type="submit" class="btn btn-primary"  value="Mua"> <a href="?action=xemsp&thiepid=<?php echo $sanpham['thiepid'];?>" class="btn btn-info">Xem</a> 
+<a href="?action=getmongmuon&gia=<?php echo $gia;?>&ten=<?php echo $sanpham['ten'];?>&id=<?php echo $sanpham['thiepid'];?>" class="btn btn-danger"><img src="icon/wish.png"height="15" width="15"></a></form>
 
 </div>
 <?php $i++;if ($i%3==0)echo "</div>";?>
