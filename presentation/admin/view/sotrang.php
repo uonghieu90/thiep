@@ -44,7 +44,12 @@ $so1=filter_input(INPUT_GET,"so",FILTER_VALIDATE_INT);
 	$so=get_count_trang();
 	$action="formnhaptrang";
 	$sotrang=ceil($so[0]/9);
-		break;	
+		break;
+		case "formlienhe":
+	$so=get_count_lienhe2();
+	$action="formlienhe";
+	$sotrang=ceil($so[0]/9);
+		break;
 }
 
 $so=(int)$so1;

@@ -14,6 +14,7 @@ require("data/util.php");
 require("data/tinhchat.php");
 require("data/donhang_db.php");
 require("data/thongke_db.php");
+require("data/lienhe.php");
 
 $action=filter_input(INPUT_POST,"action");
 $path=getcwd().DIRECTORY_SEPARATOR."image"; 
@@ -35,6 +36,7 @@ $trangid=5;
 }
 
 if($action=="xemtrang") {include("presentation/trang.php");}
+elseif($action=="formlienhe"||$action=="xoalienhe") {include("presentation/admin/lienhe-edit.php");}
 elseif($action=="thongke") {include("presentation/admin/thongke-edit.php");}
 elseif($action=="formnhaptrang"||$action=="suatrang"||$action=="xoatrang"||$action=="taotrang"||$action=="suatrang1") {include("presentation/admin/trang-edit.php");}
 elseif($action=="login"||$action=="logout"){include("presentation/admin/login.php");}

@@ -23,7 +23,7 @@
 <a href="index.php?action=gettrangs"> Thông tin</a>
 </li>
 <li>
-<a href="index.php?action=mua"> Rỏ hàng</a>
+<a href="index.php?action=mua"> Giỏ hàng</a>
 </li>
 </ul>
 </div>

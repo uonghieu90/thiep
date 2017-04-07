@@ -13,6 +13,7 @@ require("data/trang.php");
 require("data/nguoi.php");
 require("data/nhanxet.php");
 require("data/tinhchat.php");
+require("data/lienhe.php");
 require("data/util.php");
 $action=filter_input(INPUT_POST,"action");
 $path=getcwd().DIRECTORY_SEPARATOR."image"; 
@@ -40,7 +41,7 @@ elseif ($action=="login"||$action=="logout") include("presentation/dangnhap.php"
  elseif (($action=="dangky"||$action=="taonguoi")) include("presentation/dangky.php");
  elseif ($action=="xemtrang"||$action=="gettrangs") include("presentation/trang.php");
   elseif ($action=="tinhchat") include("presentation/tinhchat-control.php");
-   
+   elseif($action=="postlienhe") include("presentation/lienhe.php");
  if(isset($_SESSION['laadmin']))
  {
 	  if($_SESSION['laadmin']==0)

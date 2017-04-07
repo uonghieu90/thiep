@@ -32,6 +32,10 @@
 <a href="admin.php?action=formnhaptrang ">Trang
 </a>
 </li>
+<li>
+<a href="admin.php?action=formlienhe ">Liên hệ
+</a>
+</li>
 
 </ul>
 </div>
